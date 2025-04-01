@@ -1,40 +1,39 @@
-/* --- General CSS Reset --- */
 body, html {
     margin: 0;
     padding: 0;
-    font-family: 'Arial', sans-serif;
-    background-color: #ffffff;
-    scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+    font-family: 'Inter', 'Helvetica Neue', sans-serif;
+    background-color: transparent;
 }
 
-/* --- Navbar styling --- */
-.navbar {
-    background-color: #191825; /* Your dark theme color */
-    position: sticky; /* Navbar stays on top while scrolling */
-    top: 0;
-    z-index: 10;
-    padding: 10px 0;
-}
-
-.navbar-nav {
-    list-style: none;
+.primary-container {
+    background: transparent;
+    min-height: 100vh;
     display: flex;
-    justify-content: center;
-    padding: 0;
-    margin: 0;
+    flex-direction: column;
 }
 
-.navbar-nav li {
-    margin: 0 20px; /* Space between nav items */
+.content-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3%;
+    box-sizing: border-box;
 }
 
-.navbar-nav li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 18px;
-    transition: color 0.3s ease;
+.panel {
+    width: 90%;
+    min-height: 35vh;
+    margin: 40px;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(134,93,255,0.3); /* Soft lavender shadow clearly */
 }
 
-.navbar-nav li a:hover {
-    color: #FFA3FD; /* Your highlight color */
+.glass-effect {
+    /* From https://css.glass */
+    background: rgba(232, 240, 255, 0.1);
+    border-radius: 16px;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 163, 253, 0.3);
 }
