@@ -12,7 +12,6 @@
   }
 }
 
-/* Add your custom colors so Tailwind generates utility classes */
 @theme {
   /* Primary Colors (Original) */
   --color-dark-charcoal: #191825;
@@ -57,8 +56,20 @@
   --color-barely-pink-white: #FFF9FF;
 }
 
+.about-bg {
+  background: linear-gradient(to bottom right, var(--color-slate-charcoal), var(--color-midnight-charcoal));
+}
+
+.contact-form-bg {
+  background-color: rgba(25, 24, 37, 0.85);
+}
+
+.contact-form-input-bg {
+  background-color: rgba(16, 15, 24, 0.85);
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), sans-serif;
 }
