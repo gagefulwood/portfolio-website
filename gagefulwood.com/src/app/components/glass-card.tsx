@@ -24,7 +24,7 @@ const GlassCard: React.FC<GlassCardProps> = ({
   ...props
 }) => {
   // If a backgroundColor is provided in the style prop, don't add the default bg-white/45 class
-  const defaultBgClass = style && (style as any).backgroundColor ? "" : "bg-white/45";
+  const defaultBgClass = style?.backgroundColor ? "" : "bg-white/45";
   return (
     <div
       {...props}
