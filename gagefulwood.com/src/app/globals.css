@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #191825;
+    --foreground: #FFFFFF;
+  }
+}
+
+@theme {
+  /* Primary Colors (Original) */
+  --color-dark-charcoal: #191825;
+  --color-deep-lavender: #865DFF;
+  --color-vivid-lavender: #E384FF;
+  --color-soft-pink: #FFA3FD;
+
+  /* Light & Pale Variants */
+  --color-off-white-lavender: #F6F2FF;
+  --color-pale-lilac: #EDE7FF;
+  --color-soft-ivory-pink: #FFF0FC;
+  --color-pale-rose-mist: #FFEBFF;
+  --color-subtle-gray: #F4F4F8;
+  --color-whisper-gray: #ECEBF3;
+  --color-pastel-lavender: #D8CFFF;
+  --color-light-pink-blush: #FFD4FB;
+
+  /* Charcoal & Dark Variants */
+  --color-midnight-charcoal: #100F18;
+  --color-deep-charcoal: #14131F;
+  --color-slate-charcoal: #2A2938;
+  --color-shadow-charcoal: #343344;
+  --color-ash-charcoal: #424152;
+  --color-muted-charcoal: #585766;
+  --color-misty-charcoal: #6C6B79;
+  --color-pale-charcoal: #878692;
+  --color-whisper-charcoal: #A4A3AD;
+
+  /* Bluish Tones (New) */
+  --color-deep-indigo: #4752C4;
+  --color-soft-periwinkle: #8798FF;
+  --color-pale-sky-blue: #D1E3FF;
+  --color-misty-blue: #E8F0FF;
+  --color-whisper-blue: #F0F6FF;
+  --color-frosted-glass-blue: #A5C9FF;
+  --color-lavender-blue: #ADB9FF;
+  --color-cloud-blue: #C7D7FF;
+
+  /* Neutrals & Off-Whites */
+  --color-ghost-white: #F8F8FF;
+  --color-soft-white-lavender: #FAF7FF;
+  --color-barely-pink-white: #FFF9FF;
+}
+
+.about-bg {
+  background: linear-gradient(to bottom right, var(--color-slate-charcoal), var(--color-midnight-charcoal));
+}
+
+.contact-form-bg {
+  background-color: rgba(25, 24, 37, 0.85);
+}
+
+.contact-form-input-bg {
+  background-color: rgba(16, 15, 24, 0.85);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), sans-serif;
+}
