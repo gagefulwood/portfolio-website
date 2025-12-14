@@ -1,6 +1,6 @@
 "use client";
 import React, { JSX, useState } from "react";
-import GlassCard from "./components/glass-card";
+import GlassCard from "../components/glass-card";
 import { FaReact, FaGithub, FaNodeJs } from "react-icons/fa";
 import { SiDjango, SiHtml5, SiJavascript, SiTypescript, SiPostgresql, SiPython, SiSwift, SiFirebase, SiNextdotjs, SiCss3 } from "react-icons/si";
 

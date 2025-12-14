@@ -1,6 +1,6 @@
 "use client";
 import React, { JSX, useState } from "react";
-import GlassCard from "./components/glass-card";
+import GlassCard from "../components/glass-card";
 import { FaReact, FaNodeJs} from "react-icons/fa";
 import {
   SiTailwindcss,
