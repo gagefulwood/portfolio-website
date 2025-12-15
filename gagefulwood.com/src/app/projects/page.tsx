@@ -1,8 +1,8 @@
 "use client";
-import React, { useState } from "react";
-import GlassCard from "./components/glass-card";
+import React, { JSX, useState } from "react";
+import GlassCard from "../components/glass-card";
 import { FaReact, FaGithub, FaNodeJs } from "react-icons/fa";
-import { SiDjango, SiHtml5, SiJavascript, SiTypescript, SiPostgresql, SiPython, SiSwift, SiFirebase, SiNextdotjs } from "react-icons/si";
+import { SiDjango, SiHtml5, SiJavascript, SiTypescript, SiPostgresql, SiPython, SiSwift, SiFirebase, SiNextdotjs, SiCss3 } from "react-icons/si";
 
 // Define the ProjectItem interface
 interface ProjectItem {
@@ -97,6 +97,11 @@ const projectItems: ProjectItem[] = [
             name: 'PostgreSQL',
             icon: <SiPostgresql size={16} className="text-blue-800"/>,
             color: "#1E40AF",
+        },
+        {
+            name: 'CSS3',
+            icon: <SiCss3 size={16} className="text-blue-600"/>,
+            color: "#264de4",
         },
     ]
   },

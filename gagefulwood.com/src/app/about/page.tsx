@@ -1,7 +1,7 @@
 "use client";
-import React, { useState } from "react";
-import GlassCard from "./components/glass-card";
-import { FaReact, FaNodeJs, FaDatabase } from "react-icons/fa";
+import React, { JSX, useState } from "react";
+import GlassCard from "../components/glass-card";
+import { FaReact, FaNodeJs} from "react-icons/fa";
 import {
   SiTailwindcss,
   SiCss3,
@@ -17,9 +17,7 @@ import {
   SiPostgresql,
   SiSqlite,
   SiFirebase,
-  SiNodedotjs,
 } from "react-icons/si";
-import { GiMusicalNotes, GiChessKnight } from "react-icons/gi";
 
 // TechItem interface
 interface TechItem {
@@ -144,6 +142,13 @@ const techItems: TechItem[] = [
     category: "backend",
     icon: <SiFirebase size={ICON_SIZE} className="text-yellow-600" />,
     color: "#D97706",
+  },
+  {
+    title: "CSS3",
+    description: "",
+    category: "frontend",
+    icon: <SiCss3 size={ICON_SIZE} className="text-blue-600" />,
+    color: "#264de4",
   },
 ];
 
