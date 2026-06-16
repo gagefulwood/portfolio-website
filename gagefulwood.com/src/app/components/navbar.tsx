@@ -1,49 +1,52 @@
 "use client";
+
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import { MouseEvent } from "react";
+import { usePathname } from "next/navigation";
+
+const sectionLinks = [
+  { href: "/#focus", id: "focus", label: "Focus" },
+  { href: "/#projects", id: "projects", label: "Projects" },
+  { href: "/#skills", id: "skills", label: "Skills" },
+  { href: "/#contact", id: "contact", label: "Contact" },
+];
 
 export default function Navbar() {
-  const [isVisible, setIsVisible] = useState(false);
+  const pathname = usePathname();
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsVisible(window.scrollY > 200);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  const handleSectionClick = (
+    event: MouseEvent<HTMLAnchorElement>,
+    sectionId: string,
+  ) => {
+    if (pathname !== "/") return;
+
+    const target = document.getElementById(sectionId);
+    if (!target) return;
+
+    event.preventDefault();
+    window.dispatchEvent(
+      new CustomEvent("portfolio:navigate-section", {
+        detail: { sectionId },
+      }),
+    );
+  };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 p-4 bg-transparent">
-      <div className="container mx-auto flex items-center justify-between">
-        {/* Branding / Logo */}
-        <div
-          className={`text-xl font-bold transition-opacity duration-500 ${
-            isVisible ? "opacity-100 text-white" : "opacity-0"
-          }`}
-        >
-          <Link href="/">Gage Fulwood</Link>
-        </div>
-        {/* Navigation Links */}
-        <div className="flex space-x-8">
-          <Link
-            href="#about"
-            className="text-white hover:text-gray-300 transition-colors"
-          >
-            About
-          </Link>
-          <Link
-            href="#projects"
-            className="text-white hover:text-gray-300 transition-colors"
-          >
-            Projects
-          </Link>
-          <Link
-            href="#contact"
-            className="text-white hover:text-gray-300 transition-colors"
-          >
-            Contact
-          </Link>
+    <nav className="site-nav" aria-label="Primary navigation">
+      <div className="nav-inner">
+        <Link className="nav-brand" href="/">
+          Gage Fulwood
+        </Link>
+        <div className="nav-links">
+          {sectionLinks.map((link) => (
+            <Link
+              key={link.id}
+              href={link.href}
+              onClick={(event) => handleSectionClick(event, link.id)}
+            >
+              {link.label}
+            </Link>
+          ))}
         </div>
       </div>
     </nav>

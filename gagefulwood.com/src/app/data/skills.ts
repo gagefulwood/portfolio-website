@@ -1,0 +1,47 @@
+export type SkillGroup = {
+  title: string;
+  accent: "teal" | "blue" | "purple" | "amber";
+  icon: "frontend" | "backend" | "data" | "tools";
+  skills: string[];
+  evidence: string;
+  projects: string[];
+};
+
+export const skillGroups: SkillGroup[] = [
+  {
+    title: "Frontend",
+    accent: "teal",
+    icon: "frontend",
+    skills: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
+    evidence:
+      "Used in Social Journal to build typed app routes, protected screens, forms, dashboard views, API clients, hooks, and reusable UI patterns.",
+    projects: ["Social Journal"],
+  },
+  {
+    title: "Backend APIs",
+    accent: "blue",
+    icon: "backend",
+    skills: ["Python", "Django", "Django REST Framework", "REST APIs", "Validation", "Testing"],
+    evidence:
+      "Used across Social Journal and a mock server manager API to model resources, expose API endpoints, enforce workflow rules, and verify behavior with Django tests.",
+    projects: ["Social Journal", "Mock Server Manager API"],
+  },
+  {
+    title: "Data Modeling",
+    accent: "purple",
+    icon: "data",
+    skills: ["PostgreSQL", "Django ORM", "Relational modeling", "Aggregations"],
+    evidence:
+      "Used for contact/event/journal relationships in Social Journal and server/device relationships in the mock server manager API.",
+    projects: ["Social Journal", "Mock Server Manager API"],
+  },
+  {
+    title: "Delivery & Tooling",
+    accent: "amber",
+    icon: "tools",
+    skills: ["Git", "Docker", "Docker Compose", "Gunicorn", "OpenAPI docs"],
+    evidence:
+      "Used to package local backend services, document API behavior, and keep projects runnable for review.",
+    projects: ["Mock Server Manager API", "Social Journal"],
+  },
+];
