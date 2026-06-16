@@ -6,6 +6,12 @@ export type ProjectLink = {
 export type ProjectEvidence = {
   label: string;
   value: string;
+  accent: "teal" | "blue" | "purple" | "amber";
+};
+
+export type ProjectProofPoint = {
+  lead: string;
+  detail: string;
 };
 
 export type Project = {
@@ -14,7 +20,7 @@ export type Project = {
   status: string;
   stack: string[];
   summary: string;
-  proofPoints: string[];
+  proofPoints: ProjectProofPoint[];
   evidence: ProjectEvidence[];
   note: string;
   actionLabel: string;
@@ -37,15 +43,43 @@ export const projects: Project[] = [
     summary:
       "A private-first relationship journaling app for contacts, events, journal entries, media, and relationship activity signals.",
     proofPoints: [
-      "Modeled contacts, facts, observations, events, journal entries, media, lookup data, and dashboard summaries as connected resources.",
-      "Built typed frontend API clients, hooks, protected routes, forms, filters, cards, and dashboard views.",
-      "Added backend test coverage across main resource domains, with 181 passing Django tests reported during audit.",
+      {
+        lead: "Modeled connected data",
+        detail:
+          "contacts, facts, observations, events, journal entries, media, lookup data, and dashboard summaries as connected resources.",
+      },
+      {
+        lead: "Built full-stack product workflows",
+        detail:
+          "typed frontend API clients, hooks, protected routes, forms, filters, cards, and dashboard views.",
+      },
+      {
+        lead: "Test-backed backend foundations",
+        detail:
+          "added backend test coverage across main resource domains, with 181 passing Django tests reported during audit.",
+      },
     ],
     evidence: [
-      { label: "Frontend", value: "Next.js routes, forms, API clients" },
-      { label: "Backend", value: "DRF resources and validation" },
-      { label: "Data", value: "PostgreSQL relational models" },
-      { label: "Testing", value: "181 Django tests" },
+      {
+        label: "Frontend",
+        value: "Next.js routes, forms, API clients",
+        accent: "teal",
+      },
+      {
+        label: "Backend",
+        value: "DRF resources and validation",
+        accent: "blue",
+      },
+      {
+        label: "Data",
+        value: "PostgreSQL relational models",
+        accent: "purple",
+      },
+      {
+        label: "Testing",
+        value: "181 Django tests",
+        accent: "amber",
+      },
     ],
     note:
       "Private in-progress build. social-journal.com is owned and planned, but not live yet; public case study/screenshots should be added once safe to share.",
@@ -62,15 +96,27 @@ export const projects: Project[] = [
     summary:
       "A Dockerized Django REST Framework API for managing devices, servers, generated subdomains, and server status transitions.",
     proofPoints: [
-      "Implemented Device and Server models with a relationship between servers and assigned devices.",
-      "Built DRF endpoints for registration, listing, retrieval, status updates, and validation-heavy workflows.",
-      "Created tests covering endpoints, validation, transitions, subdomain behavior, and device assignment.",
+      {
+        lead: "Modeled server/device behavior",
+        detail:
+          "implemented Device and Server models with a relationship between servers and assigned devices.",
+      },
+      {
+        lead: "Built validation-heavy API workflows",
+        detail:
+          "created DRF endpoints for registration, listing, retrieval, status updates, and transition rules.",
+      },
+      {
+        lead: "Covered assignment logic with tests",
+        detail:
+          "created tests covering endpoints, validation, transitions, subdomain behavior, and device assignment.",
+      },
     ],
     evidence: [
-      { label: "API", value: "DRF model viewsets" },
-      { label: "Data", value: "Device/server relations" },
-      { label: "Infra", value: "Docker Compose + Gunicorn" },
-      { label: "Tests", value: "23 backend tests" },
+      { label: "API", value: "DRF model viewsets", accent: "teal" },
+      { label: "Data", value: "Device/server relations", accent: "purple" },
+      { label: "Infra", value: "Docker Compose + Gunicorn", accent: "blue" },
+      { label: "Tests", value: "23 backend tests", accent: "amber" },
     ],
     note:
       "Not a production system. Public repository and sharing details should be confirmed before linking.",
