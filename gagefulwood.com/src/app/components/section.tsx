@@ -1,3 +1,5 @@
+import SectionHeader from "./section-header";
+
 type SectionProps = {
   id?: string;
   eyebrow?: string;
@@ -18,11 +20,7 @@ export default function Section({
   return (
     <section id={id} className={`section-shell ${className}`}>
       <div className="section-inner">
-        <div className="section-heading">
-          {eyebrow && <p className="section-eyebrow">{eyebrow}</p>}
-          <h2>{title}</h2>
-          {description && <p>{description}</p>}
-        </div>
+        <SectionHeader eyebrow={eyebrow} title={title} description={description} />
         {children}
       </div>
     </section>

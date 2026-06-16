@@ -1,25 +1,18 @@
 import { skillGroups } from "../data/skills";
 import Section from "./section";
+import SkillEvidenceCard from "./skill-evidence-card";
 
 export default function SkillsSection() {
   return (
     <Section
       id="skills"
       eyebrow="Skills"
-      title="Technologies tied to project evidence"
-      description="Skills are grouped by how they show up in the actual projects, not as a detached icon grid."
+      title="Skills with Project Evidence"
+      description="Technologies are grouped by where they appear in actual project work, not as a detached keyword list."
     >
       <div className="skills-grid">
         {skillGroups.map((group) => (
-          <article key={group.title} className="skill-card">
-            <h3>{group.title}</h3>
-            <div className="tag-list">
-              {group.skills.map((skill) => (
-                <span key={skill}>{skill}</span>
-              ))}
-            </div>
-            <p>{group.evidence}</p>
-          </article>
+          <SkillEvidenceCard key={group.title} group={group} />
         ))}
       </div>
     </Section>

@@ -6,9 +6,9 @@ export default function ProjectsSection() {
   return (
     <Section
       id="projects"
-      eyebrow="Featured projects"
-      title="Current evidence of software engineering work"
-      description="The old project list has been replaced with work that can be described accurately: one full-stack product and one focused backend take-home assignment."
+      eyebrow="Projects"
+      title="Featured Engineering Work"
+      description="Focused case studies showing full-stack product work, backend API design, relational data modeling, and test-backed implementation."
     >
       <div className="projects-stack">
         {projects.map((project, index) => (
