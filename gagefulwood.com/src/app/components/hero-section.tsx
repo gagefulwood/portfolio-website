@@ -25,6 +25,14 @@ export default function HeroSection() {
           <p>{profile.resumeNote}</p>
         </div>
       </div>
+
+      <a className="hero-scroll-indicator" href="#focus" aria-label="Scroll to technical focus">
+        <span>Scroll to learn more</span>
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 5v14" />
+          <path d="m6 13 6 6 6-6" />
+        </svg>
+      </a>
     </section>
   );
 }
