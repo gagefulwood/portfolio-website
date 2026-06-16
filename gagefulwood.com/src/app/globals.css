@@ -221,7 +221,8 @@ textarea {
   line-height: 1.08;
 }
 
-.skills-section .section-heading h2::after {
+.skills-section .section-heading h2::after,
+.technical-focus .section-heading h2::after {
   display: block;
   width: 3rem;
   height: 0.2rem;
@@ -238,14 +239,12 @@ textarea {
   line-height: 1.75;
 }
 
-.focus-grid,
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 1rem;
 }
 
-.focus-card,
 .skill-evidence-card,
 .project-card,
 .contact-panel,
@@ -256,13 +255,11 @@ textarea {
   box-shadow: var(--shadow);
 }
 
-.focus-card,
 .skill-evidence-card,
 .contact-panel {
   padding: 1.25rem;
 }
 
-.focus-card h3,
 .skill-evidence-card h3,
 .contact-panel h3,
 .project-card h3 {
@@ -271,12 +268,224 @@ textarea {
   line-height: 1.2;
 }
 
-.focus-card p,
 .skill-evidence-card p,
 .contact-panel p,
 .project-summary {
   color: var(--muted);
   line-height: 1.68;
+}
+
+.technical-roadmap {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: var(--shadow);
+  padding: 2rem 2.15rem;
+}
+
+.technical-roadmap__timeline {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.technical-roadmap__line {
+  position: absolute;
+  top: 50%;
+  left: 4%;
+  right: 4%;
+  height: 0.12rem;
+  transform: translateY(-50%);
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    var(--accent) 0%,
+    #2f80ed 35%,
+    var(--purple) 68%,
+    #d99400 100%
+  );
+  opacity: 0.88;
+}
+
+.technical-roadmap__content {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.technical-roadmap__item,
+.technical-roadmap__marker {
+  --focus-accent: var(--accent);
+  --focus-soft: var(--accent-soft);
+  --focus-text: var(--accent-strong);
+}
+
+.technical-roadmap__item {
+  position: relative;
+  display: grid;
+  min-height: 22rem;
+  padding: 0 1.45rem;
+}
+
+.technical-roadmap__item + .technical-roadmap__item {
+  border-left: 1px solid var(--border);
+}
+
+.technical-roadmap__item--teal {
+  --focus-accent: var(--accent);
+  --focus-soft: var(--accent-soft);
+  --focus-text: var(--accent-strong);
+}
+
+.technical-roadmap__item--blue {
+  --focus-accent: #2f80ed;
+  --focus-soft: var(--blue-soft);
+  --focus-text: #1c62bd;
+}
+
+.technical-roadmap__item--purple {
+  --focus-accent: var(--purple);
+  --focus-soft: var(--purple-soft);
+  --focus-text: #5946a3;
+}
+
+.technical-roadmap__item--amber {
+  --focus-accent: #d99400;
+  --focus-soft: var(--amber-soft);
+  --focus-text: #875400;
+}
+
+.technical-roadmap__marker,
+.technical-roadmap__mobile-number {
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  justify-self: center;
+  border: 1px solid color-mix(in srgb, var(--focus-accent) 55%, #ffffff);
+  border-radius: 999px;
+  background: #ffffff;
+  color: var(--focus-text);
+  font-size: 1.05rem;
+  font-weight: 850;
+}
+
+.technical-roadmap__mobile-number {
+  display: none;
+}
+
+.technical-roadmap__item-content {
+  display: grid;
+  grid-template-rows: auto auto auto minmax(0, 1fr) auto;
+  gap: 0.9rem;
+  height: 100%;
+}
+
+.technical-roadmap__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.85rem;
+  height: 3.85rem;
+  border-radius: 0.8rem;
+  background: var(--focus-soft);
+  color: var(--focus-text);
+}
+
+.technical-roadmap__icon svg {
+  width: 2rem;
+  height: 2rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
+.technical-roadmap__item h3 {
+  margin: 0;
+  color: #111827;
+  font-size: 1.2rem;
+  line-height: 1.2;
+}
+
+.technical-roadmap__accent {
+  width: 2.7rem;
+  height: 0.18rem;
+  border-radius: 999px;
+  background: var(--focus-accent);
+}
+
+.technical-roadmap__item p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.technical-roadmap__used {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.55rem;
+  align-items: center;
+  margin-top: auto;
+  border-radius: 0.7rem;
+  background: color-mix(in srgb, var(--focus-soft) 58%, #ffffff);
+  color: var(--foreground);
+  padding: 0.72rem 0.82rem;
+  line-height: 1.45;
+}
+
+.technical-roadmap__used > span {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 999px;
+  background: var(--focus-accent);
+}
+
+.technical-roadmap__used strong {
+  color: var(--focus-text);
+  font-size: 0.9rem;
+}
+
+.technical-focus__note {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.85rem;
+  align-items: center;
+  width: min(920px, calc(100% - 2rem));
+  margin: 1.65rem auto 0;
+  border: 1px solid var(--border);
+  border-radius: 0.8rem;
+  background: rgba(255, 255, 255, 0.74);
+  box-shadow: 0 10px 28px rgba(23, 32, 51, 0.045);
+  padding: 0.9rem 1.05rem;
+}
+
+.technical-focus__note-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #ffffff;
+  font-size: 1.4rem;
+}
+
+.technical-focus__note p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.technical-focus__note strong {
+  color: var(--accent-strong);
 }
 
 .projects-stack {
@@ -712,9 +921,35 @@ textarea {
 }
 
 @media (max-width: 920px) {
-  .focus-grid,
   .skills-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .technical-roadmap {
+    padding: 1.65rem;
+  }
+
+  .technical-roadmap__line {
+    display: none;
+  }
+
+  .technical-roadmap__timeline,
+  .technical-roadmap__content {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .technical-roadmap__timeline {
+    row-gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .technical-roadmap__item {
+    min-height: 20rem;
+    padding: 0 1.25rem;
+  }
+
+  .technical-roadmap__item:nth-child(3) {
+    border-left: 0;
   }
 
   .project-card,
@@ -746,8 +981,66 @@ textarea {
     padding: 3.25rem 1rem;
   }
 
-  .focus-grid,
   .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .technical-roadmap {
+    padding: 1.25rem;
+  }
+
+  .technical-roadmap__timeline {
+    display: none;
+  }
+
+  .technical-roadmap__content {
+    grid-template-columns: 1fr;
+  }
+
+  .technical-roadmap__item {
+    grid-template-columns: auto minmax(0, 1fr);
+    grid-template-rows: auto;
+    gap: 0.9rem;
+    min-height: 0;
+    border-left: 0;
+    padding: 0 0 1.5rem;
+  }
+
+  .technical-roadmap__item + .technical-roadmap__item {
+    border-left: 0;
+    border-top: 1px solid var(--border);
+    padding-top: 1.5rem;
+  }
+
+  .technical-roadmap__item::before {
+    position: absolute;
+    top: 3rem;
+    bottom: -1.5rem;
+    left: 1.5rem;
+    width: 0.12rem;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--focus-accent) 40%, var(--border));
+    content: "";
+  }
+
+  .technical-roadmap__item:last-child::before {
+    display: none;
+  }
+
+  .technical-roadmap__mobile-number {
+    display: inline-flex;
+  }
+
+  .technical-roadmap__item-content {
+    gap: 0.75rem;
+  }
+
+  .technical-roadmap__icon {
+    width: 3.2rem;
+    height: 3.2rem;
+  }
+
+  .technical-focus__note {
     grid-template-columns: 1fr;
   }
 

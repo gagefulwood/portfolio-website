@@ -20,25 +20,50 @@ export const profile = {
     "Resume is being revised to better match current project work and employer expectations.",
 };
 
-export const technicalFocus = [
+export type TechnicalFocusItem = {
+  number: string;
+  title: string;
+  description: string;
+  showsUpIn: string[];
+  accent: "teal" | "blue" | "purple" | "amber";
+  icon: "product" | "database" | "interface" | "delivery";
+};
+
+export const technicalFocusItems: TechnicalFocusItem[] = [
   {
-    title: "Full-stack product work",
+    number: "01",
+    title: "Product Systems",
     description:
       "Building connected frontend and backend workflows rather than isolated UI demos.",
+    showsUpIn: ["Social Journal"],
+    accent: "teal",
+    icon: "product",
   },
   {
-    title: "Backend APIs and data modeling",
+    number: "02",
+    title: "API + Data Modeling",
     description:
       "Designing REST APIs, relational models, validation rules, and test-backed business logic.",
+    showsUpIn: ["Social Journal", "Homerun"],
+    accent: "blue",
+    icon: "database",
   },
   {
-    title: "Readable React interfaces",
+    number: "03",
+    title: "Interface Quality",
     description:
-      "Implementing typed Next.js screens, forms, API clients, hooks, and stateful user flows.",
+      "Creating typed React/Next.js screens, forms, API clients, hooks, and stateful user flows.",
+    showsUpIn: ["Social Journal"],
+    accent: "purple",
+    icon: "interface",
   },
   {
-    title: "Pragmatic delivery",
+    number: "04",
+    title: "Delivery Discipline",
     description:
       "Documenting status honestly, separating finished work from rough edges, and prioritizing maintainable architecture.",
+    showsUpIn: ["Homerun", "Social Journal"],
+    accent: "amber",
+    icon: "delivery",
   },
 ];
