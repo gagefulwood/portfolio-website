@@ -46,7 +46,7 @@ function FocusIcon({ icon }: { icon: TechnicalFocusItem["icon"] }) {
 
 export default function FocusSection() {
   return (
-    <section id="focus" className="section-shell technical-focus">
+    <section id="focus" className="section-shell technical-focus" data-scroll-section>
       <div className="section-inner">
         <SectionHeader
           eyebrow="Technical Focus"

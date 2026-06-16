@@ -18,7 +18,7 @@ export default function Section({
   className = "",
 }: SectionProps) {
   return (
-    <section id={id} className={`section-shell ${className}`}>
+    <section id={id} className={`section-shell ${className}`} data-scroll-section>
       <div className="section-inner">
         <SectionHeader eyebrow={eyebrow} title={title} description={description} />
         {children}

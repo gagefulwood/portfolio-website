@@ -2,7 +2,7 @@ import { profile } from "../data/profile";
 
 export default function HeroSection() {
   return (
-    <section className="hero-section">
+    <section id="hero" className="hero-section" data-scroll-section>
       <div className="hero-inner">
         <p className="hero-kicker">{profile.educationLine}</p>
         <h1>{profile.name}</h1>
