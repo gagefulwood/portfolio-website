@@ -5,7 +5,7 @@ import { useEffect } from "react";
 const SCROLL_LOCK_MS = 850;
 const WHEEL_THRESHOLD = 28;
 const INTERACTIVE_SELECTOR =
-  "input, textarea, select, button, a, [role='button'], [contenteditable='true']";
+  "input, textarea, select, button, a, [role='button'], [contenteditable='true'], [data-carousel]";
 
 function isInteractiveTarget(target: EventTarget | null) {
   return target instanceof Element && Boolean(target.closest(INTERACTIVE_SELECTOR));

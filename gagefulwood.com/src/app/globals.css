@@ -550,6 +550,153 @@ textarea {
   gap: 1.1rem;
 }
 
+.projects-carousel {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.2rem;
+  outline: none;
+  overflow-anchor: none;
+}
+
+.projects-carousel:focus-visible {
+  border-radius: 0.85rem;
+  box-shadow: 0 0 0 3px rgba(15, 150, 153, 0.18);
+}
+
+.projects-carousel__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.projects-carousel__meta {
+  display: inline-flex;
+  align-items: center;
+  min-width: 0;
+  gap: 0.7rem;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.projects-carousel__meta span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 3.5rem;
+  border: 1px solid #b9d6d9;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+  padding: 0.35rem 0.65rem;
+  font-weight: 850;
+}
+
+.projects-carousel__meta strong {
+  overflow: hidden;
+  color: #111827;
+  font-weight: 850;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.projects-carousel__controls,
+.projects-carousel__dots {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.projects-carousel__controls button,
+.projects-carousel__dots button {
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--ink-soft);
+  font-weight: 800;
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease,
+    color 160ms ease,
+    opacity 160ms ease;
+}
+
+.projects-carousel__controls button {
+  border-radius: 0.5rem;
+  padding: 0.65rem 0.85rem;
+}
+
+.projects-carousel__controls button:hover:not(:disabled),
+.projects-carousel__controls button:focus-visible,
+.projects-carousel__dots button:hover,
+.projects-carousel__dots button:focus-visible {
+  border-color: var(--accent);
+  color: var(--accent-strong);
+}
+
+.projects-carousel__controls button:disabled {
+  cursor: default;
+  opacity: 0.45;
+}
+
+.projects-carousel__viewport {
+  overflow: hidden;
+  margin: -0.25rem;
+  padding: 0.25rem;
+}
+
+.projects-carousel__track {
+  display: flex;
+  transition: transform 420ms ease;
+  will-change: transform;
+}
+
+.projects-carousel__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+}
+
+.projects-carousel__slide .project-card {
+  min-height: 100%;
+}
+
+.projects-carousel__slide:nth-child(2) .project-card {
+  border-left-color: var(--blue);
+}
+
+.projects-carousel__dots {
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.projects-carousel__dots button {
+  position: relative;
+  border-radius: 999px;
+  padding: 0.5rem 0.75rem 0.5rem 1.6rem;
+  font-size: 0.82rem;
+}
+
+.projects-carousel__dots button::before {
+  position: absolute;
+  top: 50%;
+  left: 0.65rem;
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 999px;
+  background: #b8c2d1;
+  transform: translateY(-50%);
+  content: "";
+}
+
+.projects-carousel__dots button[aria-current="true"] {
+  border-color: #b9d6d9;
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+}
+
+.projects-carousel__dots button[aria-current="true"]::before {
+  background: var(--accent);
+}
+
 .project-card {
   display: grid;
   grid-template-columns: minmax(0, 1.3fr) minmax(20rem, 0.82fr);
@@ -1355,7 +1502,7 @@ textarea {
 }
 
 @media (min-width: 820px) {
-  .project-card:nth-child(2) {
+  .projects-carousel__slide:nth-child(2) .project-card {
     border-left-color: var(--blue);
   }
 }
@@ -1395,6 +1542,15 @@ textarea {
   .project-card,
   .contact-layout {
     grid-template-columns: 1fr;
+  }
+
+  .projects-carousel__header {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .projects-carousel__controls {
+    justify-content: flex-end;
   }
 }
 
@@ -1496,6 +1652,36 @@ textarea {
     grid-template-columns: 1fr;
   }
 
+  .projects-carousel__meta {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .projects-carousel__meta strong {
+    white-space: normal;
+  }
+
+  .projects-carousel__controls {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .projects-carousel__controls button,
+  .projects-carousel__dots button {
+    min-height: 2.75rem;
+  }
+
+  .projects-carousel__dots {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .projects-carousel__dots button {
+    width: 100%;
+    text-align: left;
+  }
+
   .hero-actions,
   .link-row {
     align-items: stretch;
@@ -1523,5 +1709,9 @@ textarea {
 
   .hero-scroll-indicator {
     animation: none;
+  }
+
+  .projects-carousel__track {
+    transition: none;
   }
 }
