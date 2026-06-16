@@ -1,5 +1,7 @@
 export type SkillGroup = {
   title: string;
+  accent: "teal" | "blue" | "purple" | "amber";
+  icon: "frontend" | "backend" | "data" | "tools";
   skills: string[];
   evidence: string;
   projects: string[];
@@ -8,6 +10,8 @@ export type SkillGroup = {
 export const skillGroups: SkillGroup[] = [
   {
     title: "Frontend",
+    accent: "teal",
+    icon: "frontend",
     skills: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
     evidence:
       "Used in Social Journal to build typed app routes, protected screens, forms, dashboard views, API clients, hooks, and reusable UI patterns.",
@@ -15,6 +19,8 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     title: "Backend APIs",
+    accent: "blue",
+    icon: "backend",
     skills: ["Python", "Django", "Django REST Framework", "REST APIs", "Validation", "Testing"],
     evidence:
       "Used across Social Journal and Homerun to model resources, expose API endpoints, enforce workflow rules, and verify behavior with Django tests.",
@@ -22,6 +28,8 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     title: "Data Modeling",
+    accent: "purple",
+    icon: "data",
     skills: ["PostgreSQL", "Django ORM", "Relational modeling", "Aggregations"],
     evidence:
       "Used for contact/event/journal relationships in Social Journal and server/device relationships in Homerun.",
@@ -29,6 +37,8 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     title: "Delivery & Tooling",
+    accent: "amber",
+    icon: "tools",
     skills: ["Git", "Docker", "Docker Compose", "Gunicorn", "OpenAPI docs"],
     evidence:
       "Used to package local backend services, document API behavior, and keep projects runnable for review.",
