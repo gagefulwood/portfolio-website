@@ -9,6 +9,20 @@ export type ProjectEvidence = {
   accent: "teal" | "blue" | "purple" | "amber";
 };
 
+export type ProjectStatus = {
+  label: string;
+  value: string;
+  detail: string;
+  accent: "amber";
+};
+
+export type ProjectNextStep = {
+  label: string;
+  value: string;
+  detail: string;
+  accent: "teal";
+};
+
 export type ProjectProofPoint = {
   lead: string;
   detail: string;
@@ -17,14 +31,12 @@ export type ProjectProofPoint = {
 export type Project = {
   title: string;
   category: string;
-  status: string;
+  status: ProjectStatus;
   stack: string[];
   summary: string;
   proofPoints: ProjectProofPoint[];
   evidence: ProjectEvidence[];
-  note: string;
-  actionLabel: string;
-  takeaway: string;
+  nextStep: ProjectNextStep;
   links: ProjectLink[];
 };
 
@@ -32,7 +44,12 @@ export const projects: Project[] = [
   {
     title: "Social Journal",
     category: "Full-stack web application",
-    status: "In progress · backend tested · frontend partially complete",
+    status: {
+      label: "Status",
+      value: "In progress",
+      detail: "Backend tested · frontend partially complete",
+      accent: "amber",
+    },
     stack: [
       "Next.js",
       "React",
@@ -81,17 +98,23 @@ export const projects: Project[] = [
         accent: "amber",
       },
     ],
-    note:
-      "Private in-progress build. social-journal.com is owned and planned, but not live yet; public case study/screenshots should be added once safe to share.",
-    actionLabel: "Case study planned",
-    takeaway:
-      "Strongest evidence of full-stack product engineering: API design, relational modeling, frontend integration, dashboard aggregation, media handling, and test-backed backend development.",
+    nextStep: {
+      label: "Next step",
+      value: "Deployment planned",
+      detail: "Private build · public deployment planned",
+      accent: "teal",
+    },
     links: [],
   },
   {
     title: "Homerun Server Manager API",
     category: "Take-home backend assignment",
-    status: "Completed local backend assignment",
+    status: {
+      label: "Status",
+      value: "Completed locally",
+      detail: "Backend assignment · not production deployed",
+      accent: "amber",
+    },
     stack: ["Python", "Django", "DRF", "PostgreSQL", "Docker", "Gunicorn"],
     summary:
       "A Dockerized Django REST Framework API for managing devices, servers, generated subdomains, and server status transitions.",
@@ -118,11 +141,12 @@ export const projects: Project[] = [
       { label: "Infra", value: "Docker Compose + Gunicorn", accent: "blue" },
       { label: "Tests", value: "23 backend tests", accent: "amber" },
     ],
-    note:
-      "Not a production system. Public repository and sharing details should be confirmed before linking.",
-    actionLabel: "Repository pending confirmation",
-    takeaway:
-      "Demonstrates ability to read a backend spec, model stateful API behavior, implement validation-heavy endpoints, containerize services, and cover business logic with tests.",
+    nextStep: {
+      label: "Next step",
+      value: "Repo confirmation pending",
+      detail: "Local build · public sharing pending confirmation",
+      accent: "teal",
+    },
     links: [],
   },
 ];

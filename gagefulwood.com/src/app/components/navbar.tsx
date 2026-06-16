@@ -1,6 +1,36 @@
+"use client";
+
 import Link from "next/link";
+import { MouseEvent } from "react";
+import { usePathname } from "next/navigation";
+
+const sectionLinks = [
+  { href: "/#focus", id: "focus", label: "Focus" },
+  { href: "/#projects", id: "projects", label: "Projects" },
+  { href: "/#skills", id: "skills", label: "Skills" },
+  { href: "/#contact", id: "contact", label: "Contact" },
+];
 
 export default function Navbar() {
+  const pathname = usePathname();
+
+  const handleSectionClick = (
+    event: MouseEvent<HTMLAnchorElement>,
+    sectionId: string,
+  ) => {
+    if (pathname !== "/") return;
+
+    const target = document.getElementById(sectionId);
+    if (!target) return;
+
+    event.preventDefault();
+    window.dispatchEvent(
+      new CustomEvent("portfolio:navigate-section", {
+        detail: { sectionId },
+      }),
+    );
+  };
+
   return (
     <nav className="site-nav" aria-label="Primary navigation">
       <div className="nav-inner">
@@ -8,10 +38,15 @@ export default function Navbar() {
           Gage Fulwood
         </Link>
         <div className="nav-links">
-          <Link href="/#focus">Focus</Link>
-          <Link href="/#projects">Projects</Link>
-          <Link href="/#skills">Skills</Link>
-          <Link href="/#contact">Contact</Link>
+          {sectionLinks.map((link) => (
+            <Link
+              key={link.id}
+              href={link.href}
+              onClick={(event) => handleSectionClick(event, link.id)}
+            >
+              {link.label}
+            </Link>
+          ))}
         </div>
       </div>
     </nav>

@@ -6,7 +6,7 @@ type ProjectCardProps = {
   featured?: boolean;
 };
 
-function SmallIcon({ type }: { type: "category" | "proof" | "status" | "lock" }) {
+function SmallIcon({ type }: { type: "category" | "proof" | "status" | "next" }) {
   if (type === "category") {
     return (
       <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -36,10 +36,21 @@ function SmallIcon({ type }: { type: "category" | "proof" | "status" | "lock" })
     );
   }
 
+  if (type === "next") {
+    return (
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M5 19c4.8-1 8.4-4.6 9.4-9.4L16 2l3 3 3 3-7.6 1.6" />
+        <path d="M9 15 5 19" />
+        <path d="M7 17H4v-3" />
+        <path d="M13 6 18 11" />
+      </svg>
+    );
+  }
+
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true">
-      <rect x="6" y="10" width="12" height="10" rx="2" />
-      <path d="M9 10V7a3 3 0 0 1 6 0v3" />
+      <circle cx="12" cy="12" r="9" />
+      <path d="m8 12 2.5 2.5L16 9" />
     </svg>
   );
 }
@@ -122,10 +133,16 @@ export default function ProjectCard({ project, featured = false }: ProjectCardPr
         </div>
       </div>
 
-      <aside className="project-case-study__aside">
+      <aside className="project-side-panel">
         <div className="project-status">
-          <SmallIcon type="status" />
-          <span>{project.status}</span>
+          <span className="project-panel-card__icon" aria-hidden="true">
+            <SmallIcon type="status" />
+          </span>
+          <div>
+            <span>{project.status.label}</span>
+            <strong>{project.status.value}</strong>
+            <p>{project.status.detail}</p>
+          </div>
         </div>
 
         <div className="project-evidence-grid">
@@ -145,23 +162,16 @@ export default function ProjectCard({ project, featured = false }: ProjectCardPr
           ))}
         </div>
 
-        <p className="takeaway">{project.takeaway}</p>
-        <p className="project-note">{project.note}</p>
-
-        {project.links.length > 0 ? (
-          <div className="link-row">
-            {project.links.map((link) => (
-              <a key={link.href} href={link.href} target="_blank" rel="noreferrer">
-                {link.label}
-              </a>
-            ))}
+        <div className="project-next-step">
+          <span className="project-panel-card__icon" aria-hidden="true">
+            <SmallIcon type="next" />
+          </span>
+          <div>
+            <span>{project.nextStep.label}</span>
+            <strong>{project.nextStep.value}</strong>
+            <p>{project.nextStep.detail}</p>
           </div>
-        ) : (
-          <button className="project-action" type="button" disabled>
-            <SmallIcon type="lock" />
-            {project.actionLabel}
-          </button>
-        )}
+        </div>
       </aside>
     </article>
   );

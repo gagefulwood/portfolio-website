@@ -17,9 +17,20 @@ export default function FeaturedProjectsCarousel({
   const activeProject = projects[activeIndex];
 
   const keepPagePosition = (scrollTop: number) => {
-    window.requestAnimationFrame(() => {
+    document.documentElement.dataset.carouselInteraction = "true";
+
+    const restoreScroll = () => {
       window.scrollTo(window.scrollX, scrollTop);
-      window.setTimeout(() => window.scrollTo(window.scrollX, scrollTop), 0);
+    };
+
+    window.requestAnimationFrame(() => {
+      restoreScroll();
+      window.setTimeout(restoreScroll, 0);
+      window.setTimeout(restoreScroll, 120);
+      window.setTimeout(() => {
+        restoreScroll();
+        delete document.documentElement.dataset.carouselInteraction;
+      }, 480);
     });
   };
 
@@ -103,6 +114,7 @@ export default function FeaturedProjectsCarousel({
           {projects.map((project, index) => (
             <div
               className="projects-carousel__slide"
+              data-active={index === activeIndex ? "true" : undefined}
               key={project.title}
               role="group"
               aria-roledescription="slide"
