@@ -23,8 +23,8 @@ export const skillGroups: SkillGroup[] = [
     icon: "backend",
     skills: ["Python", "Django", "Django REST Framework", "REST APIs", "Validation", "Testing"],
     evidence:
-      "Used across Social Journal and Homerun to model resources, expose API endpoints, enforce workflow rules, and verify behavior with Django tests.",
-    projects: ["Social Journal", "Homerun"],
+      "Used across Social Journal and a mock server manager API to model resources, expose API endpoints, enforce workflow rules, and verify behavior with Django tests.",
+    projects: ["Social Journal", "Mock Server Manager API"],
   },
   {
     title: "Data Modeling",
@@ -32,8 +32,8 @@ export const skillGroups: SkillGroup[] = [
     icon: "data",
     skills: ["PostgreSQL", "Django ORM", "Relational modeling", "Aggregations"],
     evidence:
-      "Used for contact/event/journal relationships in Social Journal and server/device relationships in Homerun.",
-    projects: ["Social Journal", "Homerun"],
+      "Used for contact/event/journal relationships in Social Journal and server/device relationships in the mock server manager API.",
+    projects: ["Social Journal", "Mock Server Manager API"],
   },
   {
     title: "Delivery & Tooling",
@@ -42,6 +42,6 @@ export const skillGroups: SkillGroup[] = [
     skills: ["Git", "Docker", "Docker Compose", "Gunicorn", "OpenAPI docs"],
     evidence:
       "Used to package local backend services, document API behavior, and keep projects runnable for review.",
-    projects: ["Homerun", "Social Journal"],
+    projects: ["Mock Server Manager API", "Social Journal"],
   },
 ];

@@ -73,7 +73,7 @@ export default function FeaturedProjectsCarousel({
       tabIndex={0}
       role="region"
       aria-roledescription="carousel"
-      aria-label="Featured engineering project case studies"
+      aria-label="Featured engineering projects"
       onKeyDown={handleKeyDown}
     >
       <div className="projects-carousel__header">

@@ -107,17 +107,17 @@ export const projects: Project[] = [
     links: [],
   },
   {
-    title: "Homerun Server Manager API",
+    title: "Mock Server Manager API",
     category: "Take-home backend assignment",
     status: {
       label: "Status",
       value: "Completed locally",
-      detail: "Backend assignment · not production deployed",
+      detail: "Interview assignment · not production deployed",
       accent: "amber",
     },
     stack: ["Python", "Django", "DRF", "PostgreSQL", "Docker", "Gunicorn"],
     summary:
-      "A Dockerized Django REST Framework API for managing devices, servers, generated subdomains, and server status transitions.",
+      "A Dockerized Django REST Framework mock server manager API built for the Homerun desktop interview process, covering devices, servers, generated subdomains, and server status transitions.",
     proofPoints: [
       {
         lead: "Modeled server/device behavior",

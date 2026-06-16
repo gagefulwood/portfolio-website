@@ -44,7 +44,7 @@ export const technicalFocusItems: TechnicalFocusItem[] = [
     title: "API + Data Modeling",
     description:
       "Designing REST APIs, relational models, validation rules, and test-backed business logic.",
-    showsUpIn: ["Social Journal", "Homerun"],
+    showsUpIn: ["Social Journal", "Mock Server Manager API"],
     accent: "blue",
     icon: "database",
   },
@@ -62,7 +62,7 @@ export const technicalFocusItems: TechnicalFocusItem[] = [
     title: "Delivery Discipline",
     description:
       "Documenting status honestly, separating finished work from rough edges, and prioritizing maintainable architecture.",
-    showsUpIn: ["Homerun", "Social Journal"],
+    showsUpIn: ["Mock Server Manager API", "Social Journal"],
     accent: "amber",
     icon: "delivery",
   },

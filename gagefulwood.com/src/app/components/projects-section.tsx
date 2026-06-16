@@ -8,7 +8,7 @@ export default function ProjectsSection() {
       id="projects"
       eyebrow="Projects"
       title="Featured Engineering Work"
-      description="Focused case studies showing full-stack product work, backend API design, relational data modeling, and test-backed implementation."
+      description="Selected projects showing full-stack product work, backend API design, relational data modeling, and test-backed implementation."
     >
       <FeaturedProjectsCarousel projects={projects} />
     </Section>
