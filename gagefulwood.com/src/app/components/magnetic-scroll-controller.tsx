@@ -9,7 +9,7 @@ const SECTION_GAP_PX = 24;
 const WHEEL_THRESHOLD = 72;
 const WHEEL_RESET_MS = 180;
 const INTERACTIVE_SELECTOR =
-  "input, textarea, select, button, a, [role='button'], [contenteditable='true'], [data-no-magnetic-scroll], [data-carousel]";
+  "input, textarea, select, button, a, [role='button'], [contenteditable='true'], [data-no-magnetic-scroll-control]";
 
 function isInteractiveTarget(target: EventTarget | null) {
   return target instanceof Element && Boolean(target.closest(INTERACTIVE_SELECTOR));

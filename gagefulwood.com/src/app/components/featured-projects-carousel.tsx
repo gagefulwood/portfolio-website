@@ -85,7 +85,11 @@ export default function FeaturedProjectsCarousel({
         </div>
 
         {hasMultipleProjects && (
-          <div className="projects-carousel__controls" aria-label="Project carousel controls">
+          <div
+            className="projects-carousel__controls"
+            data-no-magnetic-scroll-control
+            aria-label="Project carousel controls"
+          >
             <button
               type="button"
               onClick={goToPrevious}
@@ -127,7 +131,11 @@ export default function FeaturedProjectsCarousel({
       </div>
 
       {hasMultipleProjects && (
-        <div className="projects-carousel__dots" aria-label="Select project">
+        <div
+          className="projects-carousel__dots"
+          data-no-magnetic-scroll-control
+          aria-label="Select project"
+        >
           {projects.map((project, index) => (
             <button
               key={project.title}
